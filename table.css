@@ -1,0 +1,83 @@
+/* Basic table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Table header styling */
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+/* Table header background color */
+th {
+    background-color: #f2f2f2;
+}
+
+/* Table row hover effect */
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Button styling */
+button {
+    padding: 8px 12px;
+    margin: 4px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #45a049;
+}
+/* Navbar styling */
+.navbar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.navbar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #f1f1f1;
+}
+
+.navbar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Table styling when navbar is opened */
+.table-container {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+.table-container.shifted {
+    margin-left: 250px;
+}

@@ -16,11 +16,13 @@
     <!-- The sidebar -->  
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="Home.html">Home</a>
-      <a href="myfiles.html">Myfiles</a>
-      <a href="Favourites.html">Favourites</a>
-      <a href="Recycle.html">Recycle</a>
-      <a href="Contact.html">Contact</a>
+      <a href="Home.php">Home</a>
+      <a href="myfiles.php">Myfiles</a>
+      
+      <a href="Favourites.php">Favourites</a>
+      <a href="Recycle.php">Recycle</a>
+      <a href="Contact.php">Contact</a>
+      <a href="Profile.php">Profile</a>
       <!-- <a href="Profile.html">Profile</a> -->
   </div>
   
