@@ -10,7 +10,7 @@
     
     }
     body {
-        background-color: lightgray;
+        background-color: white;
     }
     .divider {
         position: absolute;
@@ -20,11 +20,11 @@
         width: 50%;
         height: 50%;
         display: flex;
-        box-shadow: 0 1px 20px 0 orange;
+        box-shadow: 0 1px 20px 0 skyblue;
     }
     .divider .left_side {
         width: 50%;
-        background: linear-gradient(to right, orangered,orange);
+        background: linear-gradient(to right, blue,navy);
         padding: 30px 25px;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;

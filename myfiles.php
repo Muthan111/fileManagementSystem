@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="navbarCSS.css">
 </head>
 <body>
-    <div id="myNavbar" class="navbar">
+<div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="Home.php">Home</a>
-        <a href="myfiles.php">Myfiles</a>
-        
+        <a href="javascript:void(0)" class="dropdown-btn" >files</a>
+        <div class="dropdown-container">
+            <a href="uploadForm.php">upload Files</a>
+            <a href="myfiles.php">hello</a>
+        </div>
         <a href="Favourites.php">Favourites</a>
         <a href="Recycle.php">Recycle</a>
         <a href="Contact.php">Contact</a>
         <a href="Profile.php">Profile</a>
-      <!-- <a href="Profile.html">Profile</a> -->
+        
     </div>
 
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-INCLUDE "../Database/connectToDatabase.php";
+INCLUDE "connectToDatabase.php";
 
 if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"])){
     $fullName = validate($_POST['Name']);
@@ -9,7 +9,7 @@ if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"]
     $password = validate($_POST['passWord']);
     $password_pattern = '/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/';
     $Full_Name_pattern ='/^[a-zA-ZÀ-ÿ\'\- ]+$/u';
-
+    $ID = generateRandomID();
     $checkEmailQuery = "SELECT * FROM user WHERE Email = '$email'";
     $checkResult = mysqli_query($conn, $checkEmailQuery);
 
@@ -48,7 +48,7 @@ if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"]
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     
-    $sql = "INSERT INTO user (Name,userName, email, password) VALUES ('$fullName','$userName', '$email' , '$password')";
+    $sql = "INSERT INTO user (id,Name,userName, email, password) VALUES ('$ID','$fullName','$userName', '$email' , '$password')";
     $result = mysqli_query($conn,$sql);
     $userID = mysqli_insert_id($conn);
 
@@ -92,5 +92,24 @@ function validate($data){
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+}
+
+function generateRandomID() {
+    $letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $digits = '0123456789';
+    
+    $randomID = '';
+    
+    // Generate two uppercase letters
+    for ($i = 0; $i < 2; $i++) {
+        $randomID .= $letters[rand(0, strlen($letters) - 1)];
+    }
+    
+    // Generate three digits
+    for ($i = 0; $i < 4; $i++) {
+        $randomID .= $digits[rand(0, strlen($digits) - 1)];
+    }
+    
+    return $randomID;
 }
 ?>

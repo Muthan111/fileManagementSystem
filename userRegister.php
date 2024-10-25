@@ -8,27 +8,21 @@
 </head>
 <body>
 
-<nav>
-    <!-- The sidebar -->  
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="Home.php">Home</a>
-      <a href="myfiles.php">Myfiles</a>
-      <a href="Favourites.php">Favourites</a>
-      <a href="Recycle.php">Recycle</a>
-      <a href="Contact.php">Contact</a>
-      <a href="Profile.php">Profile</a>
-      <!-- <a href="Profile.html">Profile</a> -->
-  </div>
-  
-  <!-- Use any element to open the sidenav -->
-  <span onclick="openNav()">Click here to open</span>
-  
-  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-  <div id="main">
-      ...
-  </div>
-</nav>
+<nav id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Home.php">Home</a>
+        <a href="javascript:void(0)" class="dropdown-btn">Files</a>
+        <div class="dropdown-container">
+            <a href="uploadForm.php">Upload Files</a>
+            <a href="myfiles.php">My Files</a>
+        </div>
+        <a href="Favourites.php">Favourites</a>
+        <a href="Recycle.php">Recycle</a>
+        <a href="Contact.php">Contact</a>
+        <a href="Profile.php">Profile</a>
+        
+    </nav>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
   <div class  = "flexbox" >
     <h1>Please register your details</h1>
       <p> Enter your name, username, email and password</p>

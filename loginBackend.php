@@ -20,22 +20,21 @@ if (isset($_POST["email"]) && isset($_POST["passWord"])) {
         $result = mysqli_query($conn,$sql);
         if (mysqli_num_rows($result)){
             $row = mysqli_fetch_assoc($result);
-            if($row['email'] === $email && $row['password'] === $password){
+            
+            
                 $_SESSION['userName'] = $row['userName'];
                 $_SESSION['Name'] = $row['Name'];
                 $_SESSION['email']= $row['email'];
-                header("Location: loggedIn.html");
-                
-            }
+                $_SESSION['id'] = $row['id'];
+                header(header: "Location: Profile.php");
+                echo "Login Successful";
+                exit();
+            
         }   else {
                 header("Location: userLogin.php?error=Incorrect User name or password");
                 exit();
         }
-        if($result) {
-            echo "Login Successful";
-        } else {
-            echo "Login Failed";
-        }
+        
        
     }
 } else {
