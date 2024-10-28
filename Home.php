@@ -1,3 +1,6 @@
+<?php
+include 'sessionTimeLogout.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,13 @@
         <a href="Favourites.php">Favourites</a>
         <a href="Recycle.php">Recycle</a>
         <a href="Contact.php">Contact</a>
-        <a href="Profile.php">Profile</a>
+        <a href="javascript:void(0)" class="dropdown-btn" >Profile</a>
+        <div class="dropdown-container">
+            <a href="Profile.php">View Profile</a>
+            <a href="userLogin.php">Login</a>
+            <a href="userRegister.php">Register</a>
+        </div>
+        
         
     </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
@@ -41,30 +50,6 @@
         </ul>
     </div>
     
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-
-        // JavaScript to handle the dropdown
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-        var i;
-
-        for (i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-    </script>
+    <script src="navbarScript1.js"></script> 
 </body>
 </html>

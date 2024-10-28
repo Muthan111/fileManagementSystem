@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,31 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Files</title>
     <link rel="stylesheet" href="table.css">
-    <link rel="stylesheet" href="navbarCSS.css">
+    <link rel="stylesheet" href="navbarCSS12.css">
 </head>
 <body>
-<div id="mySidenav" class="sidenav">
+<nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="Home.php">Home</a>
-        <a href="javascript:void(0)" class="dropdown-btn" >files</a>
+        <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
-            <a href="uploadForm.php">upload Files</a>
-            <a href="myfiles.php">hello</a>
+            <a href="uploadForm.php">Upload Files</a>
+            <a href="myfiles.php">My Files</a>
         </div>
         <a href="Favourites.php">Favourites</a>
         <a href="Recycle.php">Recycle</a>
         <a href="Contact.php">Contact</a>
-        <a href="Profile.php">Profile</a>
+        <a href="javascript:void(0)" class="dropdown-btn" >Profile</a>
+        <div class="dropdown-container">
+            <a href="Profile.php">View Profile</a>
+            <a href="userLogin.php">Login</a>
+            <a href="userRegister.php">Register</a>
+        </div>
         
-    </div>
-
+        
+    </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
-
     <div class="table-container" id="tableContainer">
         <?php
+        include 'sessionTimeLogout.php';
         INCLUDE "connectToDatabase.php";
+        
         // Fetch uploaded files
-        $sql = "SELECT Name, path FROM files";
+        $sql = "SELECT fileName, filePath FROM files";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -38,13 +45,15 @@
             echo "<table border='1'>";
             echo "<tr><th>File Name</th><th>Link</th><th>Action1</th><th>Action2</th><th>Action3</th></tr>";
             while($row = $result->fetch_assoc()) {
-                $extension = pathinfo($row["path"], PATHINFO_EXTENSION);
+                $extension = pathinfo($row["filePath"], PATHINFO_EXTENSION);
                 $target = ($extension == 'docx') ? " target='_blank'" : "";
+                $_SESSION["fileName"] = $row["fileName"];
+                $_SESSION["filePath"] = $row["filePath"];
                 echo "<tr>";
-                echo "<td>" . $row["Name"] . "</td>";
-                echo "<td><a href='" . $row["path"] . "'$target>" . $row["Name"] . "</a></td>";
-                echo "<td><button onclick=\"window.location.href='downloadFile.php?file=" . urlencode($row["path"]) . "'\">Download</button></td>";
-                echo "<td><button onclick=\"window.location.href='delete.php?file=" . urlencode($row["path"]) . "'\">Delete</button></td>";
+                echo "<td>" . $row["fileName"] . "</td>";
+                echo "<td><a href='" . $row["filePath"] . "'$target>" . $row["fileName"] . "</a></td>";
+                echo "<td><button onclick=\"window.location.href='downloadFile.php?file=" . urlencode($row["filePath"]) . "'\">Download</button></td>";
+                echo "<td><button onclick=\"window.location.href='delete.php?file=" . urlencode($row["filePath"]) . "'\">Delete</button></td>";
                 echo "<td><button onclick=\"window.location.href=''\">Action3</button></td>";
                 echo "</tr>";
             }
@@ -60,16 +69,6 @@
         ?>
     </div>
 
-    <script>
-        function openNav() {
-            document.getElementById("myNavbar").style.left = "0";
-            document.getElementById("tableContainer").classList.add("shifted");
-        }
-
-        function closeNav() {
-            document.getElementById("myNavbar").style.left = "-250px";
-            document.getElementById("tableContainer").classList.remove("shifted");
-        }
-    </script>
+    <script src="navbarScript1.js"></script> 
 </body>
 </html>

@@ -6,7 +6,7 @@
  </title>
  
  <link rel = "stylesheet" type ="text/css" href = "userLoginCSS.css">
- <link rel = "stylesheet" type ="text/css" href = "navbarCSS.css">
+ <link rel = "stylesheet" type ="text/css" href = "navbarCSS12.css">
  <meta charset="utf-8">
 </head>
 <body>
@@ -22,7 +22,13 @@
         <a href="Favourites.php">Favourites</a>
         <a href="Recycle.php">Recycle</a>
         <a href="Contact.php">Contact</a>
-        <a href="Profile.php">Profile</a>
+        <a href="javascript:void(0)" class="dropdown-btn" >Profile</a>
+        <div class="dropdown-container">
+            <a href="Profile.php">View Profile</a>
+            <a href="userLogin.php">Login</a>
+            <a href="userRegister.php">Register</a>
+        </div>
+        
         
     </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
@@ -58,6 +64,6 @@
       
   </div>    
 </div> 
- 
+<script src="navbarScript1.js"></script> 
 </body>
 </html> 

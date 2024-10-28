@@ -35,9 +35,9 @@ $result2 = $conn->query($sql2);
 if ($result2->num_rows == 0) {
     // Create 'files' table if it does not exist
     $sql2 = "CREATE TABLE files (
-        id CHAR(6) PRIMARY KEY,
-        Name VARCHAR(50) NOT NULL,
-        path VARCHAR(50) NOT NULL UNIQUE,
+        fileId CHAR(6) PRIMARY KEY,
+        fileName VARCHAR(50) NOT NULL,
+        filePath VARCHAR(50) NOT NULL UNIQUE,
         userID CHAR(6)
     )";
 
@@ -48,6 +48,25 @@ if ($result2->num_rows == 0) {
     }
 } else {
     echo "Table 'files' already exists<br>";
+}
+$sql3 = "SHOW TABLES LIKE 'bin'";
+$result3 = $conn->query($sql3);
+
+if ($result3->num_rows == 0) {
+    // Create 'files' table if it does not exist
+    $sql3 = "CREATE TABLE bin (
+        recycleId CHAR(6) PRIMARY KEY,
+        DeletecFileName VARCHAR(50) NOT NULL,
+        userID CHAR(6)
+    )";
+
+    if ($conn->query($sql3) === TRUE) {
+        echo "Table 'bin' created successfully<br>";
+    } else {
+        echo "Error creating table 'files': " . $conn->error . "<br>";
+    }
+} else {
+    echo "Table 'bin' already exists<br>";
 }
 
 $conn->close();

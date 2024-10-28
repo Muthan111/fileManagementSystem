@@ -26,7 +26,7 @@ if (isset($_POST["email"]) && isset($_POST["passWord"])) {
                 $_SESSION['Name'] = $row['Name'];
                 $_SESSION['email']= $row['email'];
                 $_SESSION['id'] = $row['id'];
-                header(header: "Location: Profile.php");
+                header(header: "Location: loggedIn.php");
                 echo "Login Successful";
                 exit();
             
@@ -48,5 +48,6 @@ function validate($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
+
 
 ?>

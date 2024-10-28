@@ -1,15 +1,18 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favourites Page</title>
-    
+    <title>Upload Status</title>
+    <link rel="stylesheet" href="uploadMessageStyles.css">
     <link rel = "stylesheet" type ="text/css" href = "navbarCSS12.css">
 </head>
 <body>
-    
-    <nav id="mySidenav" class="sidenav">
+<nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="Home.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
@@ -24,18 +27,20 @@
         
     </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
-      
-      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-      <div id="main">
-          ...
-      </div>
-    </nav>
-    <main>
-        
-    </main>
-    <footer>
-        
-    </footer>
-    <script src="navbarScript1.js"></script>
+    <div class="message-container">
+        <?php
+        if (isset($_SESSION['id'])) {
+            echo "<h1>Upload Successful</h1>";
+            echo "<p>Your file has been uploaded successfully.</p>";
+            // Unset the session variable to prevent message from showing again on refresh
+            
+        } else {
+            echo "<h1>Upload Failed</h1>";
+            echo "<p>There was an error uploading your file. Please try again.</p>";
+        }
+        ?>
+        <a href="uploadForm.php">Go back to upload form</a>
+    </div>
+    <script src="navbarScript1.js"></script> 
 </body>
 </html>
