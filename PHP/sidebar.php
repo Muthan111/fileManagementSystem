@@ -8,7 +8,7 @@ include 'sessionTimeLogout.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
-    <link rel="stylesheet" href="navbarCSS12.css">
+    <link rel="stylesheet" href="../CSS/navbarCSS12.css">
 </head>
 <body>
     <nav id="mySidenav" class="sidenav">
@@ -26,6 +26,6 @@ include 'sessionTimeLogout.php';
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
 
     
-    <script src="navbarScript1.js"></script> 
+    <script src="../navbarScript1.js"></script> 
 </body>
 </html>

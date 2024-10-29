@@ -6,8 +6,8 @@ include 'sessionTimeLogout.php';
 <head>
     <title>Profile</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="navbarCSS12.css">
-    <link rel="stylesheet" type="text/css" href="profile12.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/navbarCSS12.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/profile12.css">
 </head>
 <body>
 <nav id="mySidenav" class="sidenav">
@@ -71,6 +71,6 @@ include 'sessionTimeLogout.php';
             </div>
         </div>
     </div>
-   <script src="navbarScript1.js"></script> 
+   <script src="../navbarScript1.js"></script> 
  </body>   
 </html>

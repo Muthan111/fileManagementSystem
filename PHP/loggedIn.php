@@ -7,8 +7,8 @@ include 'session.php';
                     <meta charset='UTF-8'>
                     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
                     <title>Logged In</title>
-                    <link rel = "stylesheet" type ="text/css" href = "navbarCSS12.css">
-                    <link rel="stylesheet" type="text/css" href="loggedInCSS.css">
+                    <link rel = "stylesheet" type ="text/css" href = "../CSS/navbarCSS12.css">
+                    <link rel="stylesheet" type="text/css" href="../CSS/loggedInCSS.css">
 
                     <style>
                         
@@ -46,7 +46,7 @@ include 'session.php';
                     </div>
                     <!-- <p><a href='continue1.php'>Click here to continue</a></p>
                     <br><p><a href='session_logout.php'>Click here to logout</a></p> -->
-                    <script src="navbarScript1.js"></script>
+                    <script src="../navbarScript1.js"></script>
                 </body>
                 </html>
                       

@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Files</title>
+<<<<<<< HEAD:PHP/myfiles.php
+    <link rel="stylesheet" href="../CSS/table.css">
+    <link rel="stylesheet" href="../CSS/navbarCSS12.css">
+=======
     <link rel="stylesheet" href="table.css">
     <link rel="stylesheet" href="navbarCSS12.css">
+>>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:myfiles.php
 </head>
 <body>
 <nav id="mySidenav" class="sidenav">
@@ -34,26 +39,32 @@
         <?php
         include 'sessionTimeLogout.php';
         INCLUDE "connectToDatabase.php";
+        
         // Fetch uploaded files
-        $sql = "SELECT DeletecFileName FROM bin";
+        $sql = "SELECT fileName, filePath FROM files";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // Output data of each row
-            echo "<h2>Deleted Files</h2>";
+            echo "<h2>Uploaded Files</h2>";
             echo "<table border='1'>";
-            echo "<tr><th>File Name</th><th>Action2</th><th>Action3</th></tr>";
+            echo "<tr><th>File Name</th><th>Link</th><th>Action1</th><th>Action2</th><th>Action3</th></tr>";
             while($row = $result->fetch_assoc()) {
-                $_SESSION["DeletecFileName"] = $row["DeletecFileName"];
+                $extension = pathinfo($row["filePath"], PATHINFO_EXTENSION);
+                $target = ($extension == 'docx') ? " target='_blank'" : "";
+                $_SESSION["fileName"] = $row["fileName"];
+                $_SESSION["filePath"] = $row["filePath"];
                 echo "<tr>";
-                echo "<td>" . $row["DeletecFileName"] . "</td>";
-                echo "<td><button onclick=\"window.location.href='permantlyDelete.php'\">Delete</button></td>";
+                echo "<td>" . $row["fileName"] . "</td>";
+                echo "<td><a href='" . $row["filePath"] . "'$target>" . $row["fileName"] . "</a></td>";
+                echo "<td><button onclick=\"window.location.href='downloadFile.php?file=" . urlencode($row["filePath"]) . "'\">Download</button></td>";
+                echo "<td><button onclick=\"window.location.href='delete.php?file=" . urlencode($row["filePath"]) . "'\">Delete</button></td>";
                 echo "<td><button onclick=\"window.location.href=''\">Action3</button></td>";
                 echo "</tr>";
             }
             echo "</table>";
             echo "<div style='text-align: center; margin-top: 20px;'>";
-            
+            echo "<a href='uploadForm.php'><button>Upload Form</button></a>";
             echo "</div>";
         } else {
             echo "No files found.";
@@ -63,6 +74,10 @@
         ?>
     </div>
 
+<<<<<<< HEAD:PHP/myfiles.php
+    <script src="../navbarScript1.js"></script> 
+=======
     <script src="navbarScript1.js"></script> 
+>>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:myfiles.php
 </body>
 </html>

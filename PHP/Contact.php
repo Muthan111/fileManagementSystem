@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="navbarCSS.css">
-    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="../CSS/navbarCSS12.css">
+    <link rel="stylesheet" href="../CSS/Contact.css">
 </head>
 <body>
     
@@ -47,6 +47,10 @@
         </div>
     </nav>
 
+<<<<<<< HEAD:PHP/Contact.php
+    <script src="../navbarScript1.js"></script>
+=======
     <script src="navbarScript1.js"></script>
+>>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:Contact.php
 </body>
 </html>

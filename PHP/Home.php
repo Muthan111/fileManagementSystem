@@ -7,8 +7,8 @@ include 'sessionTimeLogout.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="Homestyles.css">
-    <link rel="stylesheet" href="navbarCSS12.css">
+    <link rel="stylesheet" href="../CSS/Homestyles.css">
+    <link rel="stylesheet" href="../CSS/navbarCSS12.css">
 </head>
 <body>
 <nav id="mySidenav" class="sidenav">
@@ -50,6 +50,10 @@ include 'sessionTimeLogout.php';
         </ul>
     </div>
     
+<<<<<<< HEAD:PHP/Home.php
+    <script src="../navbarScript1.js"></script> 
+=======
     <script src="navbarScript1.js"></script> 
+>>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:Home.php
 </body>
 </html>

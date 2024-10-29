@@ -3,8 +3,8 @@
     <meta charset = "utf-8">
     <title> Registration Page</title>
     
-    <link rel = "stylesheet" type ="text/css" href = "userRegisterCSS.css">
-    <link rel = "stylesheet" type ="text/css" href = "navbarCSS.css">
+    <link rel = "stylesheet" type ="text/css" href = "../CSS/userRegisterCSS.css">
+    <link rel = "stylesheet" type ="text/css" href = "../CSS/navbarCSS.css">
 </head>
 <body>
 
@@ -59,6 +59,10 @@
         
     </div>
   </div>  
+<<<<<<< HEAD:PHP/userRegister.php
+  <script src="../navbarScript1.js"></script> 
+=======
   <script src="navbarScript1.js"></script> 
+>>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:userRegister.php
 </body>
 </html>
