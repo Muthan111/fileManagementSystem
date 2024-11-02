@@ -3,14 +3,14 @@
     width: 50%;
     margin: 50px auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .message-container h1 {
-    color: #4CAF50;
+    color: #6A5ACD;
 }
 
 .message-container p {
@@ -21,12 +21,15 @@
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #6A5ACD;
     color: white;
     text-decoration: none;
     border-radius: 4px;
 }
 
 .message-container a:hover {
-    background-color: #45a049;
+    background-color: #5A4CAD;
+}
+body{
+    background-color: #F5F5F5;
 }

@@ -1,7 +1,7 @@
 <?php
 include 'sessionTimeLogout.php';
 include 'connectToDatabase.php';
-$target_dir = "upload/";
+$target_dir = "../upload/";
 
 if (isset($_FILES['file']) && $_FILES['file']['error'] == 0 && isset($_SESSION['id'])) {
     $filename = basename($_FILES["file"]["name"]);

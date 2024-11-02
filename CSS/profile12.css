@@ -3,13 +3,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #F5F5F5;
 }
 
 h1 {
-    color: #333;
+    color: #6A5ACD;
     text-align: center;
     margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .profile-container {
@@ -26,9 +28,48 @@ h1 {
 }
 
 .data h4 {
-    color: #333;
+    color: black;
 }
 
 .data p {
-    color: #666;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+/* Picture frame styles */
+.picture-frame {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.picture-frame h4 {
+    color: #333;
+}
+
+.picture-frame input[type="file"] {
+    margin: 20px 0;
+}
+
+.picture-frame button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.picture-frame button:hover {
+    background-color: #45a049;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }

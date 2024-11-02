@@ -16,7 +16,8 @@ if ($result->num_rows == 0) {
         Name VARCHAR(50) NOT NULL,
         userName VARCHAR(50) NOT NULL UNIQUE,
         email VARCHAR(50) NOT NULL UNIQUE,
-        password VARCHAR(255) NOT NULL
+        password VARCHAR(255) NOT NULL,
+        profilePicture VARCHAR(250)
     )";
 
     if ($conn->query($sql) === TRUE) {
@@ -38,6 +39,7 @@ if ($result2->num_rows == 0) {
         fileId CHAR(6) PRIMARY KEY,
         fileName VARCHAR(50) NOT NULL,
         filePath VARCHAR(50) NOT NULL UNIQUE,
+        isFavourite Boolean,
         userID CHAR(6)
     )";
 
@@ -68,6 +70,26 @@ if ($result3->num_rows == 0) {
 } else {
     echo "Table 'bin' already exists<br>";
 }
+$sql4 = "SHOW TABLES LIKE 'admin'";
+$result = $conn->query($sql4);
 
+if ($result->num_rows == 0) {
+    // Create 'user' table if it does not exist
+    $sql4 = "CREATE TABLE admin (
+        adminId CHAR(6) PRIMARY KEY,
+        Name VARCHAR(50) NOT NULL,
+        userName VARCHAR(50) NOT NULL UNIQUE,
+        email VARCHAR(50) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL
+    )";
+
+    if ($conn->query($sql4) === TRUE) {
+        echo "Table 'admin' created successfully<br>";
+    } else {
+        echo "Error creating table 'admin': " . $conn->error . "<br>";
+    }
+} else {
+    echo "Table 'admin' already exists<br>";
+}
 $conn->close();
 ?>

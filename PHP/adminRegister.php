@@ -3,12 +3,12 @@
     <meta charset = "utf-8">
     <title> Registration Page</title>
     
-    <link rel = "stylesheet" type ="text/css" href = "../CSS/userRegisterCSS.css">
-    <link rel = "stylesheet" type ="text/css" href = "../CSS/navbarCSS12.css">
+    <!-- <link rel = "stylesheet" type ="text/css" href = "../CSS/userRegisterCSS.css">
+    <link rel = "stylesheet" type ="text/css" href = "../CSS/navbarCSS.css"> -->
 </head>
 <body>
 
-<nav id="mySidenav" class="sidenav">
+<!-- <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="Home.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
@@ -28,7 +28,7 @@
         
         
     </nav>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span> -->
   <div class  = "flexbox" >
     <h1>Please register your details</h1>
       <p> Enter your name, username, email and password</p>
@@ -38,10 +38,12 @@
     <div class = "register">
         <h1> Customer: Enter your details </h1>
         <h1> Register</h1>
-        <form action = 'userRegisterBackend.php'  method ='post'>
+        <form action = 'adminRegisterBackend.php'  method ='post'>
           <?php if (isset($_GET['error'])){ ?>
                 <p class = "error"><?php echo $_GET['error']; ?></p>
             <?php } ?>
+            <label>Admin Id</label>
+            <input type ="Id" name ="Id" placeholder = "Admin Id" id = "Admin_d"  >
             <label>Full Name</label>
             <input type ="Name" name ="Name" placeholder = "Name" id = "Name"  >
             <label>Email</label>

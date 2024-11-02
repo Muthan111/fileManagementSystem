@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Status</title>
-    <link rel="stylesheet" href="deleteMessageStyles.css">
-    <link rel="stylesheet" href="navbarCSS12.css">
+    <link rel="stylesheet" href="../CSS/deleteMessageStyles.css">
+    <link rel="stylesheet" href="../CSS/navbarCSS12.css">
 </head>
 <body>
     <nav id="mySidenav" class="sidenav">

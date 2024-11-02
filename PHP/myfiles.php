@@ -5,13 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Files</title>
-<<<<<<< HEAD:PHP/myfiles.php
     <link rel="stylesheet" href="../CSS/table.css">
     <link rel="stylesheet" href="../CSS/navbarCSS12.css">
-=======
-    <link rel="stylesheet" href="table.css">
-    <link rel="stylesheet" href="navbarCSS12.css">
->>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:myfiles.php
 </head>
 <body>
 <nav id="mySidenav" class="sidenav">
@@ -39,7 +34,7 @@
         <?php
         include 'sessionTimeLogout.php';
         INCLUDE "connectToDatabase.php";
-        
+        include 'php_functions.php';
         // Fetch uploaded files
         $sql = "SELECT fileName, filePath FROM files";
         $result = $conn->query($sql);
@@ -59,7 +54,7 @@
                 echo "<td><a href='" . $row["filePath"] . "'$target>" . $row["fileName"] . "</a></td>";
                 echo "<td><button onclick=\"window.location.href='downloadFile.php?file=" . urlencode($row["filePath"]) . "'\">Download</button></td>";
                 echo "<td><button onclick=\"window.location.href='delete.php?file=" . urlencode($row["filePath"]) . "'\">Delete</button></td>";
-                echo "<td><button onclick=\"window.location.href=''\">Action3</button></td>";
+                echo "<td><button onclick=\"window.location.href='markFavourite.php?file=" . urlencode($row["filePath"]) . "'\">Action3</button></td>";
                 echo "</tr>";
             }
             echo "</table>";
@@ -74,10 +69,6 @@
         ?>
     </div>
 
-<<<<<<< HEAD:PHP/myfiles.php
     <script src="../navbarScript1.js"></script> 
-=======
-    <script src="navbarScript1.js"></script> 
->>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:myfiles.php
 </body>
 </html>

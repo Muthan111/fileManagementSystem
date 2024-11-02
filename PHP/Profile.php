@@ -32,19 +32,34 @@ include 'sessionTimeLogout.php';
     </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
     <p><?php 
-        // continue.php
+        
        
         if (isset($_SESSION['email']) && isset($_SESSION['Name']))
         {
             $username = htmlspecialchars($_SESSION['userName']);
             $email = htmlspecialchars($_SESSION['email']);
             $name = htmlspecialchars($_SESSION['Name']);
+            $password = htmlspecialchars($_SESSION['password']);
+            $id = htmlspecialchars($_SESSION['id']);
+            $pp = htmlspecialchars($_SESSION['profilePicture']);
         }  
         else echo "Please <a href='userLogin.php'>Click Here</a> to log in.";
          ?></p>
     <div id="main">
         <h1>Profile</h1>
         <div class="profile-container">
+        <div class="data">
+                <h4>ID</h4>
+                <p>
+                    <?php 
+                    if (isset($id)) {
+                        echo $id; 
+                    } else {
+                        echo "Please log in";
+                    }
+                    ?>
+                </p>
+            </div>
             <div class="data">
                 <h4>Name</h4>
                 <p>
@@ -69,6 +84,45 @@ include 'sessionTimeLogout.php';
                     ?>
                 </p>
             </div>
+            <div class="data">
+                <h4>Name</h4>
+                <p>
+                    <?php 
+                    if (isset( $email)) {
+                        echo  $email; 
+                    } else {
+                        echo "Please log in";
+                    }
+                    ?>
+                </p>
+            </div>
+            <div class="data">
+                <h4>Name</h4>
+                <p>
+                    <?php 
+                    if (isset( $password)) {
+                        echo  $password; 
+                    } else {
+                        echo "Please log in";
+                    }
+                    ?>
+                </p>
+            </div>
+            <div class="picture-frame">
+            <h4>Profile Picture</h4>
+            <?php if ($pp): ?>
+                <img src="<?php echo $pp; ?>" alt="Profile Picture" class="profile-picture">
+            <?php else: ?>
+                <img src="../upload/profile_pictures/linkedinphp.jpg" alt="Placeholder Picture" class="profile-picture">
+            <?php endif; ?>
+            <h4>Upload Profile Picture</h4>
+            <form action="uploadProfilePicture.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="profilePicture" accept="image/*">
+                <button type="submit">Upload</button>
+            </form>
+            </div>
+            
+        </div>
         </div>
     </div>
    <script src="../navbarScript1.js"></script> 

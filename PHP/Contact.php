@@ -47,10 +47,6 @@
         </div>
     </nav>
 
-<<<<<<< HEAD:PHP/Contact.php
     <script src="../navbarScript1.js"></script>
-=======
-    <script src="navbarScript1.js"></script>
->>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:Contact.php
 </body>
 </html>

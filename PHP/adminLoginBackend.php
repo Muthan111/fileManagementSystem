@@ -2,21 +2,21 @@
 session_start(); // Start the session at the beginning of the script
 include "connectToDatabase.php";
 
-if (isset($_POST["email"]) && isset($_POST["passWord"])) {
-    $email = validate($_POST['email']);
+if (isset($_POST["adminId"]) && isset($_POST["passWord"])) {
+    $adminId = validate($_POST['adminId']);
     $password = validate($_POST['passWord']);
     
-    if (empty($email)) {
-        header("Location: userLogin.php?error=email is required");
+    if (empty($adminId)) {
+        header("Location: adminLogin.php?error=adminId is required");
         
         exit();
     } elseif (empty($password)) {
-        header("Location: userLogin.php?error=Password is required");
+        header("Location: adminLogin.php?error=Password is required");
         exit();
 
         
     } else {
-        $sql = "SELECT * FROM user WHERE email ='$email' AND password = '$password' " ;
+        $sql = "SELECT * FROM admin WHERE adminId ='$adminId' AND password = '$password' " ;
         $result = mysqli_query($conn,$sql);
         if (mysqli_num_rows($result)){
             $row = mysqli_fetch_assoc($result);
@@ -25,16 +25,13 @@ if (isset($_POST["email"]) && isset($_POST["passWord"])) {
                 $_SESSION['userName'] = $row['userName'];
                 $_SESSION['Name'] = $row['Name'];
                 $_SESSION['email']= $row['email'];
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['password'] = $row['password'];
-                $_SESSION['profilePicture'] = $row['profilePicture'];
-                header(header: "Location: loggedIn.php");
+                $_SESSION['adminId'] = $row['adminId'];
+                header(header: "Location: adminDashboard.php");
                 echo "Login Successful";
-                echo $_SESSION['password'];
                 exit();
             
         }   else {
-                header("Location: userLogin.php?error=Incorrect User name or password");
+                header("Location: adminLogin.php?error=Incorrect User name or password");
                 exit();
         }
         

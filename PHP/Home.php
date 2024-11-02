@@ -25,6 +25,10 @@ include 'sessionTimeLogout.php';
         <a href="javascript:void(0)" class="dropdown-btn" >Profile</a>
         <div class="dropdown-container">
             <a href="Profile.php">View Profile</a>
+            <div class="dropdown-container">
+            <a href="changePassword.php">Change Password</a>
+            <a href="updateProfile.php">Update Profile</a>
+        </div>
             <a href="userLogin.php">Login</a>
             <a href="userRegister.php">Register</a>
         </div>
@@ -50,10 +54,7 @@ include 'sessionTimeLogout.php';
         </ul>
     </div>
     
-<<<<<<< HEAD:PHP/Home.php
-    <script src="../navbarScript1.js"></script> 
-=======
-    <script src="navbarScript1.js"></script> 
->>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:Home.php
+
+    <script src="../navbarScript1.js"></script>
 </body>
 </html>

@@ -5,13 +5,8 @@
  <title> Login
  </title>
  
-<<<<<<< HEAD:PHP/userLogin.php
  <link rel = "stylesheet" type ="text/css" href = "../CSS/userLoginCSS.css">
  <link rel = "stylesheet" type ="text/css" href = "../CSS/navbarCSS12.css">
-=======
- <link rel = "stylesheet" type ="text/css" href = "userLoginCSS.css">
- <link rel = "stylesheet" type ="text/css" href = "navbarCSS12.css">
->>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:userLogin.php
  <meta charset="utf-8">
 </head>
 <body>
@@ -65,14 +60,11 @@
           
           <button type = "submit"> Login </button>
       </form>
+      <a href="forgotPassword.php" class="forgot-password">Forgot Password?</a>
       
       
   </div>    
 </div> 
-<<<<<<< HEAD:PHP/userLogin.php
 <script src="../navbarScript1.js"></script> 
-=======
-<script src="navbarScript1.js"></script> 
->>>>>>> d20af327eb68624c3551ffa5f480cff1afd37195:userLogin.php
 </body>
 </html> 
