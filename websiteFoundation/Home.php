@@ -1,5 +1,5 @@
 <?php
-include 'sessionTimeLogout.php';
+include '../sessionManagment/sessionTimeLogout.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@ include 'sessionTimeLogout.php';
         <a href="Home.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
-            <a href="uploadForm.php">Upload Files</a>
+            <a href="../upload/uploadForm.php">Upload Files</a>
             <a href="myfiles.php">My Files</a>
         </div>
         <a href="Favourites.php">Favourites</a>
@@ -29,8 +29,8 @@ include 'sessionTimeLogout.php';
             <a href="changePassword.php">Change Password</a>
             <a href="updateProfile.php">Update Profile</a>
         </div>
-            <a href="userLogin.php">Login</a>
-            <a href="userRegister.php">Register</a>
+            <a href="../userLogin/userLogin.php">Login</a>
+            <a href="../userRegister/userRegister.php">Register</a>
         </div>
         
         

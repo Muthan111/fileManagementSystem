@@ -9,9 +9,9 @@
     
     echo "Thank you $email.";
     echo "You have logged out successfully. <br>";
-    echo "Please <a href=userLogin.php>Click Here</a> to log in again.";
+    echo "Please <a href=../userLogin/userLogin.php>Click Here</a> to log in again.";
   }
-  else echo "Please <a href='userLogin.php'>Click Here</a> to log in.";
+  else echo "Please <a href='./userLogin/userLogin.php'>Click Here</a> to log in.";
   
   function destroy_session_and_data()
 {

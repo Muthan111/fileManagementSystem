@@ -1,6 +1,6 @@
 <?php
-include "connectToDatabase.php";
-include "sessionTimeLogout.php";
+include "../Database/connectToDatabase.php";
+include "../sessionManagment/sessionTimeLogout.php";
 if (isset($_SESSION['adminId'])) {
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -9,7 +9,7 @@ if (isset($_SESSION['adminId'])) {
         $stmt->bind_param("s", $id);
         if ($stmt->execute()) {
             echo "User deleted successfully.";
-            header("Location: adminDashboard.php");
+            header("Location: ../admin/adminDashboard.php");
             exit();
         } else {
             echo "Error deleting user: " . $stmt->error;

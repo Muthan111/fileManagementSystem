@@ -1,6 +1,6 @@
 <?php
 session_start(); // Start the session at the beginning of the script
-include "connectToDatabase.php";
+include "../Database/connectToDatabase.php";
 
 if (isset($_POST["email"]) && isset($_POST["passWord"])) {
     $email = validate($_POST['email']);
@@ -28,13 +28,13 @@ if (isset($_POST["email"]) && isset($_POST["passWord"])) {
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['password'] = $row['password'];
                 $_SESSION['profilePicture'] = $row['profilePicture'];
-                header(header: "Location: loggedIn.php");
+                header(header: "Location: ../websiteFoundation/loggedIn.php");
                 echo "Login Successful";
                 echo $_SESSION['password'];
                 exit();
             
         }   else {
-                header("Location: userLogin.php?error=Incorrect User name or password");
+                header("Location: ../userLogin/userLogin.php?error=Incorrect User name or password");
                 exit();
         }
         

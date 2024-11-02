@@ -2,20 +2,21 @@
 session_start();
 INCLUDE "connectToDatabase.php";
 
-if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"])){
+if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"], $_POST["Id"])){
     $fullName = validate($_POST['Name']);
     $userName = validate($_POST['userName']);
     $email = validate($_POST['Email']);
     $password = validate($_POST['passWord']);
+    $adminID = validate($_POST['Id']);
     $password_pattern = '/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/';
     $Full_Name_pattern ='/^[a-zA-ZÀ-ÿ\'\- ]+$/u';
-    $ID = generateRandomID();
+    
     $checkEmailQuery = "SELECT * FROM user WHERE Email = '$email'";
     $checkResult = mysqli_query($conn, $checkEmailQuery);
 
     if (mysqli_num_rows($checkResult) > 0) {
         // Email already exists, redirect with an error message
-        header("Location: userRegister.php?error=Email already exists");
+        header("Location: adminRegister.php?error=Email already exists");
         exit();
     }
 
@@ -28,17 +29,17 @@ if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"]
     //     exit();
     // }
     if(empty($fullName)){
-        header("Location: userRegister.php?error=Full Name is required ");
+        header("Location: adminRegister.php?error=Full Name is required ");
         exit();
     }elseif (empty($email)){
-         header("Location: userRegister.php?error=Email is required ");
+         header("Location: adminRegister.php?error=Email is required ");
          exit();
     }     
     elseif(empty($userName)){
-        header("Location: userRegister.php?error=Username is required ");
+        header("Location: adminRegister.php?error=Username is required ");
         exit();
     }elseif(empty($password)){
-        header("Location: userRegister.php?error=Password is required ");
+        header("Location: adminRegister.php?error=Password is required ");
         exit();
     }
 
@@ -48,7 +49,7 @@ if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"]
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     
-    $sql = "INSERT INTO user (id,Name,userName, email, password) VALUES ('$ID','$fullName','$userName', '$email' , '$password')";
+    $sql = "INSERT INTO admin (adminId,Name,userName, email, password) VALUES ('$adminID','$fullName','$userName', '$email' , '$password')";
     $result = mysqli_query($conn,$sql);
     $userID = mysqli_insert_id($conn);
 

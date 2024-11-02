@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connectToDatabase.php';
+include '../Database/connectToDatabase.php';
 if (isset($_GET['file']) ) {
     $file = $_GET['file'];
     $userId = htmlspecialchars($_SESSION['id']);

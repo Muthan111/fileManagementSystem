@@ -1,6 +1,6 @@
 <?php
 session_start(); // Start the session at the beginning of the script
-include "connectToDatabase.php";
+include "../Database/connectToDatabase.php";
 
 if (isset($_POST["adminId"]) && isset($_POST["passWord"])) {
     $adminId = validate($_POST['adminId']);
@@ -26,7 +26,7 @@ if (isset($_POST["adminId"]) && isset($_POST["passWord"])) {
                 $_SESSION['Name'] = $row['Name'];
                 $_SESSION['email']= $row['email'];
                 $_SESSION['adminId'] = $row['adminId'];
-                header(header: "Location: adminDashboard.php");
+                header(header: "Location: ../admin/adminDashboard.php");
                 echo "Login Successful";
                 exit();
             

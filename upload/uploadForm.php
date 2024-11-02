@@ -1,5 +1,5 @@
 <?php
-include 'sessionTimeLogout.php';
+include '../sessionManagment/sessionTimeLogout.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,16 +13,16 @@ include 'sessionTimeLogout.php';
 <body>
     <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="Home.php">Home</a>
+        <a href="../websiteFoundation/Home.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
             <a href="uploadForm.php">Upload Files</a>
-            <a href="myfiles.php">My Files</a>
+            <a href="../websiteFoundation/myfiles.php">My Files</a>
         </div>
-        <a href="Favourites.php">Favourites</a>
-        <a href="Recycle.php">Recycle</a>
-        <a href="Contact.php">Contact</a>
-        <a href="Profile.php">Profile</a>
+        <a href="../websiteFoundation/Favourites.php">Favourites</a>
+        <a href="../websiteFoundation/Recycle.php">Recycle</a>
+        <a href="../websiteFoundation/Contact.php">Contact</a>
+        <a href="../websiteFoundation/Profile.php">Profile</a>
     </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
 

@@ -1,5 +1,5 @@
 <?php
-include 'sessionTimeLogout.php';
+include '../sessionManagment/sessionTimeLogout.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +15,8 @@ include 'sessionTimeLogout.php';
         <a href="Home.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
-            <a href="uploadForm.php">Upload Files</a>
-            <a href="myfiles.php">My Files</a>
+            <a href="../upload/uploadForm.php">Upload Files</a>
+            <a href="../upload/myfiles.php">My Files</a>
         </div>
         <a href="Favourites.php">Favourites</a>
         <a href="Recycle.php">Recycle</a>
@@ -24,8 +24,8 @@ include 'sessionTimeLogout.php';
         <a href="javascript:void(0)" class="dropdown-btn" >Profile</a>
         <div class="dropdown-container">
             <a href="Profile.php">View Profile</a>
-            <a href="userLogin.php">Login</a>
-            <a href="userRegister.php">Register</a>
+            <a href="../userLogin/userLogin.php">Login</a>
+            <a href="../userLogin/userRegister.php">Register</a>
         </div>
         
         
@@ -43,7 +43,7 @@ include 'sessionTimeLogout.php';
             $id = htmlspecialchars($_SESSION['id']);
             $pp = htmlspecialchars($_SESSION['profilePicture']);
         }  
-        else echo "Please <a href='userLogin.php'>Click Here</a> to log in.";
+        else echo "Please <a href='../userLogin/userLogin.php'>Click Here</a> to log in.";
          ?></p>
     <div id="main">
         <h1>Profile</h1>

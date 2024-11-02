@@ -14,7 +14,7 @@
         <a href="Home.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
-            <a href="uploadForm.php">Upload Files</a>
+            <a href="../upload/uploadForm.php">Upload Files</a>
             <a href="myfiles.php">My Files</a>
         </div>
         <a href="Favourites.php">Favourites</a>
@@ -23,17 +23,22 @@
         <a href="javascript:void(0)" class="dropdown-btn" >Profile</a>
         <div class="dropdown-container">
             <a href="Profile.php">View Profile</a>
-            <a href="userLogin.php">Login</a>
-            <a href="userRegister.php">Register</a>
+            <a href="../userLogin/userLogin.php">Login</a>
+            <a href="../userRegister/userRegister.php">Register</a>
         </div>
         
         
     </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
+    <form method = "post" action = "searchFavourites.php">
+        <label>Search</label>
+        <input type = "text" name = "search" placeholder = "Search here">
+        <input type = "submit" name = "submit" value = "Search">
+    </form>
     <div class="table-container" id="tableContainer">
         <?php
-        include 'sessionTimeLogout.php';
-        INCLUDE "connectToDatabase.php";
+        include '../sessionManagment/sessionTimeLogout.php';
+        INCLUDE "../Database/connectToDatabase.php";
         
         // Fetch uploaded files
         $sql = "SELECT fileName, filePath FROM files WHERE isFavourite = 1";

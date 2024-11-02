@@ -23,8 +23,8 @@
         <a href="javascript:void(0)" class="dropdown-btn" >Profile</a>
         <div class="dropdown-container">
             <a href="Profile.php">View Profile</a>
-            <a href="userLogin.php">Login</a>
-            <a href="userRegister.php">Register</a>
+            <a href="../userLogin/userLogin.php">Login</a>
+            <a href="../userRegister/userRegister.php">Register</a>
         </div>
         
         
@@ -32,8 +32,8 @@
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
     <div class="table-container" id="tableContainer">
         <?php
-        include 'sessionTimeLogout.php';
-        INCLUDE "connectToDatabase.php";
+        include '../sessionManagment/sessionTimeLogout.php';
+        INCLUDE "../Database/connectToDatabase.php";
         // include 'php_functions.php';
         // Fetch uploaded files
         $sql = "SELECT * FROM user";
@@ -51,8 +51,8 @@
                     echo "<td>" . $row["Name"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
                     echo "<td>" . $row["userName"] . "</td>";
-                    echo "<td><button onclick=\"window.location.href='editUser.php?id=" . urlencode($row["id"]) . "'\">Edit</button></td>";
-                    echo "<td><button onclick=\"window.location.href='deleteUser.php?id=" . urlencode($row["id"]) . "'\">Delete</button></td>";
+                    echo "<td><button onclick=\"window.location.href='../adminFunctions/editUser.php?id=" . urlencode($row["id"]) . "'\">Edit</button></td>";
+                    echo "<td><button onclick=\"window.location.href='../adminFunctions/deleteUser.php?id=" . urlencode($row["id"]) . "'\">Delete</button></td>";
                     echo "<td><button onclick=\"openViewModal('" . $row["id"] . "', '" . $row["Name"] . "', '" . $row["email"] . "', '" . $row["userName"] . "')\">View</button></td>";
                     echo "</tr>";
                 }

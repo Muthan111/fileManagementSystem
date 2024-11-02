@@ -19,7 +19,7 @@ if (isset($_SESSION['email'])) {
         destroy_session_and_data();
         echo "<script>
                 alert('Session timed out. Please log in again.');
-                window.location.href = 'userLogin.php';
+                window.location.href = './userLogin/userLogin.php';
               </script>";
         exit();
     } elseif(isset($_SESSION['LAST_ACTIVITY']) && time() - $_SESSION['LAST_ACTIVITY'] > ($timeout / 2) ) {

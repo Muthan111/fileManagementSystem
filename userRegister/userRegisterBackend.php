@@ -1,16 +1,15 @@
 <?php
 session_start();
-INCLUDE "connectToDatabase.php";
+INCLUDE "../Database/connectToDatabase.php";
 
-if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"], $_POST["Id"])){
+if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"])){
     $fullName = validate($_POST['Name']);
     $userName = validate($_POST['userName']);
     $email = validate($_POST['Email']);
     $password = validate($_POST['passWord']);
-    $adminID = validate($_POST['Id']);
     $password_pattern = '/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/';
     $Full_Name_pattern ='/^[a-zA-ZÀ-ÿ\'\- ]+$/u';
-    
+    $ID = generateRandomID();
     $checkEmailQuery = "SELECT * FROM user WHERE Email = '$email'";
     $checkResult = mysqli_query($conn, $checkEmailQuery);
 
@@ -49,7 +48,7 @@ if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"]
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     
-    $sql = "INSERT INTO admin (adminId,Name,userName, email, password) VALUES ('$adminID','$fullName','$userName', '$email' , '$password')";
+    $sql = "INSERT INTO user (id,Name,userName, email, password) VALUES ('$ID','$fullName','$userName', '$email' , '$password')";
     $result = mysqli_query($conn,$sql);
     $userID = mysqli_insert_id($conn);
 

@@ -1,5 +1,5 @@
 <?php
-include 'session.php';
+include '../sessionManagment/session.php';
 ?>
 <!DOCTYPE html>
                 <html lang='en'>
@@ -21,7 +21,7 @@ include 'session.php';
         <a href="Home.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
-            <a href="uploadForm.php">Upload Files</a>
+            <a href="../upload/uploadForm.php">Upload Files</a>
             <a href="myfiles.php">My Files</a>
         </div>
         <a href="Favourites.php">Favourites</a>
@@ -40,7 +40,7 @@ include 'session.php';
                         </a>
                     </div>
                     <div>
-                        <a href = "SessionLogout.php">
+                        <a href = "../sessionManagment/SessionLogout.php">
                             <button class = "button2" >Click here to logout</button>
                         </a>
                     </div>

@@ -1,7 +1,7 @@
 <?php
 session_start();
-include 'connectToDatabase.php';
-include 'php_functions.php';
+include '../Database/connectToDatabase.php';
+include '../websiteFoundation/php_functions.php';
 if (isset($_GET['file']) ) {
     $file = $_GET['file'];
     $userId = htmlspecialchars($_SESSION['id']);

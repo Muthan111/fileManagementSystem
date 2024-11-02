@@ -1,7 +1,7 @@
 <?php
-include 'sessionTimeLogout.php';
-include 'connectToDatabase.php';
-$target_dir = "../upload/";
+include '../sessionManagment/sessionTimeLogout.php';
+include '../Database/connectToDatabase.php';
+$target_dir = "../uploadfiledirectory/";
 
 if (isset($_FILES['file']) && $_FILES['file']['error'] == 0 && isset($_SESSION['id'])) {
     $filename = basename($_FILES["file"]["name"]);
@@ -27,7 +27,7 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] == 0 && isset($_SESSION['
         echo "File upload error: " . $_FILES['file']['error'];
     } elseif (!isset($_SESSION['id'])) {
         echo "User not logged in.";
-        echo "Please <a href='userLogin.php'>Click Here</a> to log in.";
+        echo "Please <a href='../userLogin/userLogin.php'>Click Here</a> to log in.";
     } else {
         echo "Unknown error.";
     }

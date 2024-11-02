@@ -1,6 +1,6 @@
 <?php
-include "connectToDatabase.php";
-include "sessionTimeLogout.php";
+include "../Database/connectToDatabase.php";
+include "../sessionManagment/sessionTimeLogout.php";
 
 if (isset($_SESSION['adminId'])) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -16,7 +16,7 @@ if (isset($_SESSION['adminId'])) {
 
         if ($stmt->execute()) {
             echo "User details updated successfully.";
-            header("Location: adminDashboard.php");
+            header("Location: ../admin/adminDashboard.php");
             exit();
         } else {
             echo "Error updating user details: " . $stmt->error;
