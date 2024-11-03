@@ -12,19 +12,19 @@ function destroy_session_and_data() {
 
 if (isset($_SESSION['email'])) {
     $email = htmlspecialchars($_SESSION['email']);
-    $timeout = 1000; // Timeout duration in seconds
+    $timeout = 300; // Timeout duration in seconds
     
     
     if (isset($_SESSION['LAST_ACTIVITY']) && time() - $_SESSION['LAST_ACTIVITY'] > $timeout) {
         destroy_session_and_data();
         echo "<script>
                 alert('Session timed out. Please log in again.');
-                window.location.href = './userLogin/userLogin.php';
+                window.location.href = '../userLogin/userLogin.php';
               </script>";
         exit();
     } elseif(isset($_SESSION['LAST_ACTIVITY']) && time() - $_SESSION['LAST_ACTIVITY'] > ($timeout / 2) ) {
         echo "<script>
-            alert('Hi <?php echo $email; ?>. Inactive for  seconds will log you out.');
+            alert('Hi <?php echo $email; ?>. Inactive for  2 minutes and 30 seconds will log you out.');
         </script>";
     }
     else {

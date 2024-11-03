@@ -1,15 +1,15 @@
 <?php
 session_start();
-include 'connectToDatabase.php';
+include '../DatabaseconnectToDatabase.php';
 
 if (!isset($_SESSION['id'])) {
-    header("Location: userLogin.php");
+    header("Location: ../userLogin/userLogin.php");
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profilePicture'])) {
     $userId = $_SESSION['id'];
-    $target_dir = "../upload/profile_pictures/";
+    $target_dir = "../websiteFoundation/upload/profile_pictures/";
     $target_file = $target_dir . basename($_FILES["profilePicture"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

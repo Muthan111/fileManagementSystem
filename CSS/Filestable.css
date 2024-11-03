@@ -1,3 +1,9 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+}
 /* Basic table styling */
 table {
     width: 100%;
@@ -28,7 +34,7 @@ button {
     padding: 8px 12px;
     margin: 4px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #00CFFF;
     color: white;
     cursor: pointer;
     border-radius: 4px;
@@ -36,7 +42,7 @@ button {
 
 /* Button hover effect */
 button:hover {
-    background-color: #45a049;
+    background-color: #00B0E6;
 }
 /* Navbar styling */
 .navbar {

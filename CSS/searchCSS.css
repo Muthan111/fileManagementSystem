@@ -1,0 +1,35 @@
+/* Search form styling */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #00CFFF;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #00B0E6;
+}

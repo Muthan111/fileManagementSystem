@@ -1,4 +1,10 @@
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+}
   .div1 {
       margin: auto;
     width: 50%;
