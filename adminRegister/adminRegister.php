@@ -7,7 +7,7 @@
     <link rel = "stylesheet" type ="text/css" href = "../CSS/navbarCSS.css">
 </head>
 <body>
-
+<script src="../navbarScript1.js"></script> 
 <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="../websiteFoundation/Home.php">Home</a>
@@ -64,6 +64,6 @@
         
     </div>
   </div>  
-  <script src="../navbarScript1.js"></script> 
+  
 </body>
 </html>

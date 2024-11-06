@@ -2,17 +2,20 @@
 include '../sessionManagment/sessionTimeLogout.php';
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Profile</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../CSS/navbarCSS13.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/profile12.css">
-</head>
-<body>
-<nav id="mySidenav" class="sidenav">
+ <html lang="en">
+ <head>
+ <title> Profile
+ </title>
+ <meta charset="utf-8"> 
+ 
+ <link rel="stylesheet" href="../CSS/navbarCSS13.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/profile13.css">
+    <link rel="stylesheet" href="../CSS/bottomBar.css">
+ </head>
+ <body>
+ <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../websiteFoundation/Home.php">Home</a>
+        <a href="../websiteFoundation/index.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
             <a href="../upload/uploadForm.php">Upload Files</a>
@@ -34,7 +37,12 @@ include '../sessionManagment/sessionTimeLogout.php';
         
     </nav>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Open Navbar</span>
-    <p><?php 
+    <div class= "divider">
+      <div class = "left_side">
+         <h4></h4>
+         <img src = "../WEB-2202-Project/images/profile_icon.png">
+         <H4>Name</H4>
+         <p><?php 
         
        
         if (isset($_SESSION['email']) && isset($_SESSION['Name']))
@@ -44,90 +52,129 @@ include '../sessionManagment/sessionTimeLogout.php';
             $name = htmlspecialchars($_SESSION['Name']);
             $password = htmlspecialchars($_SESSION['password']);
             $id = htmlspecialchars($_SESSION['id']);
+            $phone = htmlspecialchars($_SESSION['phone']);
+            $gender = htmlspecialchars($_SESSION['gender']);
+            $date = htmlspecialchars($_SESSION['dateOfBirth']);
+            $maritalStatus = htmlspecialchars($_SESSION['maritalStatus']);
+            $address = htmlspecialchars($_SESSION['address']);
             $pp = htmlspecialchars($_SESSION['profilePicture']);
         }  
         else echo "Please <a href='../userLogin/userLogin.php'>Click Here</a> to log in.";
          ?></p>
-    <div id="main">
-        <h1>Profile</h1>
-        <div class="profile-container">
-        <div class="data">
-                <h4>ID</h4>
-                <p>
-                    <?php 
-                    if (isset($id)) {
-                        echo $id; 
-                    } else {
-                        echo "Please log in";
-                    }
-                    ?>
-                </p>
+      </div>
+    
+      <div class ="right_side">
+         <div class = "information" >
+            <h4>Information</h4>
+            <div class = "info_data">
+               <div class = "data">
+                  <h4>Role</h4>
+                  <p>Customer </p>
+               </div>   
+
+               <div class = "data">
+               <h4>Email</h4>
+                  <p><?php 
+                  if (isset($email)){
+                     echo $email; 
+                  }
+                  else{
+                     echo "Please log in";
+                  }
+                  ?> </p>
+               </div>  
             </div>
-            <div class="data">
-                <h4>Name</h4>
-                <p>
-                    <?php 
-                    if (isset($name)) {
-                        echo $name; 
-                    } else {
-                        echo "Please log in";
-                    }
-                    ?>
-                </p>
+            <div class = "info_data">
+               <div class = "data">
+               <h4>Name</h4>
+                  <p><?php 
+                   
+                  if (isset($name)){
+                     echo $name; 
+                  }
+                  else{
+                     echo "Please log in";
+                  }
+                  ?> </p>
+               </div> 
+               <div class = "data">
+               <h4>User Name</h4>
+                  <p><?php 
+                   
+                  if (isset($username)){
+                     echo $username; 
+                  }
+                  else{
+                     echo "Please log in";
+                  }
+                  ?> </p>
+               </div> 
+               
+
+
+            </div>   
+            <div class = "info_data">
+               <div class = "data">
+               <h4>password</h4>
+                  <p><?php 
+                  if (isset( $password)){
+                     echo  $password; 
+                  }
+                  else{
+                     echo "Please log in";
+                  }
+                 
+                  ?> </p>
+               </div> 
+               <div class = "data">
+               <h4>id</h4>
+                  <p><?php 
+                  if (isset($id)){
+                     echo $id; 
+                  }
+                  else{
+                     echo "Please log in";
+                  }
+                 
+                  ?> </p>
+               </div> 
+               </div> 
             </div>
-            <div class="data">
-                <h4>Username</h4>
-                <p>
-                    <?php 
-                    if (isset($username)) {
-                        echo $username; 
-                    } else {
-                        echo "Please log in";
-                    }
-                    ?>
-                </p>
+            <div class = "info_data">
+               <div class = "data">
+               <h4>phone/h4>
+                  <p><?php 
+                  if (isset( $phone)){
+                     echo   $phone; 
+                  }
+                  else{
+                     echo "Please log in";
+                  }
+                 
+                  ?> </p>
+               </div> 
+               <div class = "data">
+               <h4>id</h4>
+                  <p><?php 
+                  if (isset($gender)){
+                     echo $gender; 
+                  }
+                  else{
+                     echo "Please log in";
+                  }
+                 
+                  ?> </p>
+               </div> 
+               </div> 
             </div>
-            <div class="data">
-                <h4>Name</h4>
-                <p>
-                    <?php 
-                    if (isset( $email)) {
-                        echo  $email; 
-                    } else {
-                        echo "Please log in";
-                    }
-                    ?>
-                </p>
-            </div>
-            <div class="data">
-                <h4>Name</h4>
-                <p>
-                    <?php 
-                    if (isset( $password)) {
-                        echo  $password; 
-                    } else {
-                        echo "Please log in";
-                    }
-                    ?>
-                </p>
-            </div>
-            <div class="picture-frame">
-            <h4>Profile Picture</h4>
-            <?php if ($pp): ?>
-                <img src="<?php echo $pp; ?>" alt="Profile Picture" class="profile-picture">
-            <?php else: ?>
-                <img src="../upload/profile_pictures/linkedinphp.jpg" alt="Placeholder Picture" class="profile-picture">
-            <?php endif; ?>
-            <h4>Upload Profile Picture</h4>
-            <form action="uploadProfilePicture.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="profilePicture" accept="image/*">
-                <button type="submit">Upload</button>
-            </form>
-            </div>
-            
-        </div>
-        </div>
-    </div>
-   <script src="../navbarScript1.js"></script> 
+         </div>   
+      </div>  
+   </div>
+   <div class="bottom-bar">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+        <a href="../websiteFoundation/PrivacyPolicy.php">Privacy Policy</a>
+        <a href="../websiteFoundation/TermsOfService.php">Terms of Service</a>
+    </div>  
+   <script src="../navbarScript1.js"></script>    
  </body>   
 </html>

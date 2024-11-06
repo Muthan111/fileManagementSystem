@@ -6,6 +6,7 @@
     <title>Delete Status</title>
     <link rel="stylesheet" href="../CSS/deleteMessageStyles.css">
     <link rel="stylesheet" href="../CSS/navbarCSS12.css">
+    <link rel="stylesheet" href="../CSS/bottomBar.css">
 </head>
 <body>
 <nav id="mySidenav" class="sidenav">
@@ -48,6 +49,11 @@
         // ?>
         <a href="myfiles.php">Go back to My Files</a>
     </div>
+    <div class="bottom-bar">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+        <a href="../websiteFoundation/PrivacyPolicy.php">Privacy Policy</a>
+        <a href="../websiteFoundation/TermsOfService.php">Terms of Service</a>
+    </div> 
     <script src="../navbarScript1.js"></script>
 </body>
 </html>

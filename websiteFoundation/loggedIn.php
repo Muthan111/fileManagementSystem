@@ -9,16 +9,14 @@ include '../sessionManagment/session.php';
                     <title>Logged In</title>
                     <link rel="stylesheet" href="../CSS/navbarCSS13.css">
                     <link rel="stylesheet" type="text/css" href="../CSS/loggedInCSS.css">
-
-                    <style>
-                        
-                    </style>
+                    <link rel="stylesheet" href="../CSS/bottomBar.css">
+                    
                 </head>
                 
                 <body>
                 <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../websiteFoundation/Home.php">Home</a>
+        <a href="../websiteFoundation/index.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
             <a href="../upload/uploadForm.php">Upload Files</a>
@@ -53,9 +51,19 @@ include '../sessionManagment/session.php';
                             <button class = "button2" >Click here to logout</button>
                         </a>
                     </div>
-                    <!-- <p><a href='continue1.php'>Click here to continue</a></p>
+                    <div class="bottom-bar">
+                        <p>&copy; 2023 Your Website. All rights reserved.</p>
+                        <a href="../websiteFoundation/PrivacyPolicy.php">Privacy Policy</a>
+                        <a href="../websiteFoundation/TermsOfService.php">Terms of Service</a>
+                    </div>  
+                                    <!-- <p><a href='continue1.php'>Click here to continue</a></p>
                     <br><p><a href='session_logout.php'>Click here to logout</a></p> -->
                     <script src="../navbarScript1.js"></script>
                 </body>
+                <div class="bottom-bar">
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+        <a href="../websiteFoundation/PrivacyPolicy.php">Privacy Policy</a>
+        <a href="../websiteFoundation/TermsOfService.php">Terms of Service</a>
+    </div> 
                 </html>
                       

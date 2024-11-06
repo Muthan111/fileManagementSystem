@@ -96,6 +96,6 @@
         document.getElementById('viewUserModal').style.display = 'none';
     }
         </script>
-    <script src="../navbarScript1.js"></script> 
+    <script src="../navbarScript1.js"></script>
 </body>
 </html>

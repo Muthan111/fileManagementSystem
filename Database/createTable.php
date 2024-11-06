@@ -17,6 +17,11 @@ if ($result->num_rows == 0) {
         userName VARCHAR(50) NOT NULL UNIQUE,
         email VARCHAR(50) NOT NULL UNIQUE,
         password VARCHAR(255) NOT NULL,
+        phone VARCHAR(10),
+        gender VARCHAR(6),
+        maritalStatus VARCHAR(10),
+        dateOfBirth DATE,
+        address VARCHAR(50),
         profilePicture VARCHAR(250)
     )";
 

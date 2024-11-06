@@ -7,6 +7,10 @@ if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"]
     $userName = validate($_POST['userName']);
     $email = validate($_POST['Email']);
     $password = validate($_POST['passWord']);
+    $gender = validate($_POST['Gender']);
+    $maritalStatus = validate($_POST['maritalStatus']);
+    $phone = validate($_POST['Phone']);
+    $date = validate($_POST['dateOfBirth']);
     $password_pattern = '/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/';
     $Full_Name_pattern ='/^[a-zA-ZÀ-ÿ\'\- ]+$/u';
     $ID = generateRandomID();
@@ -48,7 +52,7 @@ if(isset($_POST["Name"], $_POST["userName"], $_POST["passWord"], $_POST["Email"]
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     
-    $sql = "INSERT INTO user (id,Name,userName, email, password) VALUES ('$ID','$fullName','$userName', '$email' , '$password')";
+    $sql = "INSERT INTO user (id,Name,userName, email, password,phone,gender,maritalStatus,dateOfBirth) VALUES ('$ID','$fullName','$userName', '$email' , '$hashedPassword','$phone','$gender','$maritalStatus','$date')";
     $result = mysqli_query($conn,$sql);
     $userID = mysqli_insert_id($conn);
 

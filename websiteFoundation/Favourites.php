@@ -12,7 +12,7 @@
 <body>
 <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="../websiteFoundation/Home.php">Home</a>
+        <a href="../websiteFoundation/index.php">Home</a>
         <a href="javascript:void(0)" class="dropdown-btn">Files</a>
         <div class="dropdown-container">
             <a href="../upload/uploadForm.php">Upload Files</a>

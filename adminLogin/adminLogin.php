@@ -68,6 +68,6 @@
       
   </div>    
 </div> 
-<script src="../navbarScript1.js"></script> 
+<script src="../navbarScript1.js"></script>
 </body>
 </html> 
